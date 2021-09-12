@@ -44,7 +44,10 @@ class Youtube_Subs_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Youtube Subs', 'yts_domain' ); 
+    
     $channel = ! empty( $instance['channel'] ) ? $instance['channel'] : esc_html__( 'UC26l7fbM4NE-NhUCPnDKeew', 'yts_domain' );
+
+    $layout = ! empty( $instance['layout'] ) ? $instance['layout'] : esc_html__( 'default', 'yts_domain' );
     ?>
 		
     <!-- TITLE -->
