@@ -75,6 +75,24 @@ class Youtube_Subs_Widget extends WP_Widget {
     type="text" 
     value="<?php echo esc_attr( $channel ); ?>"
     >
+
+    <!-- LAYOUT -->
+    <p>
+		<label
+     for="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>"><?php esc_attr_e( 'Layout:', 'yts_domain' ); ?>
+    </label>
+
+		<select 
+      class="widefat" 
+      id="<?php echo esc_attr( $this->get_field_id( 'layout' ) ); ?>" 
+      name="<?php echo esc_attr( $this->get_field_name( 'layout' ) ); ?>">
+      <option value="default" <?php echo ($layout == 'default') ? 'selected' : ''; ?>
+        Default
+      </option>
+      <option value="full" <?php echo ($layout == 'full') ? 'selected' : ''; ?>
+        Full
+      </option>
+    </select>
 		</p>
 
 		<?php 
