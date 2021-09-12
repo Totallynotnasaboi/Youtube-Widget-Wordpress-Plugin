@@ -14,10 +14,10 @@ if(!defined('ABSPATH')){
 }
 
 // Load Scripts
-require_once(plugin_dir_path(__FILE__). '/include/youtubesubs-scripts.php');
+require_once(plugin_dir_path(__FILE__). 'includes/youtubesubs-scripts.php');
 
 // Load Class
-require_once(plugin_dir_path(__FILE__). '/include/youtubesubs-class.php');
+require_once(plugin_dir_path(__FILE__). 'includes/youtubesubs-class.php');
 
 // Register
 function register_youtubesubs(){
