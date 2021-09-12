@@ -30,7 +30,7 @@ class Youtube_Subs_Widget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
 		// Widget Content Output
-    echo '<div class="g-ytsubscribe" data-channelid="'.$instance['channel'].'" data-layout="full" data-count="default"></div>';
+    echo '<div class="g-ytsubscribe" data-channelid="'.$instance['channel'].'" data-layout="'.$instance['layout'].'" data-count="default"></div>';
 		
     echo $args['after_widget']; //Whater you want to display after widget (</div>, etc...)
 	}
@@ -113,6 +113,8 @@ class Youtube_Subs_Widget extends WP_Widget {
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
 
     $instance['channel'] = ( ! empty( $new_instance['channel'] ) ) ? sanitize_text_field( $new_instance['channel'] ) : '';
+
+    $instance['layout'] = ( ! empty( $new_instance['layout'] ) ) ? sanitize_text_field( $new_instance['layout'] ) : '';
 
 		return $instance;
 	}
