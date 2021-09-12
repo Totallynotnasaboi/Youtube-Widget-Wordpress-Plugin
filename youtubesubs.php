@@ -25,6 +25,4 @@ function register_youtubesubs(){
 }
 
 // Hook in function
-add_action('widgets_init', 'Youtube_Subs_Widget');
-
-?>
+add_action('widgets_init', 'register_youtubesubs');
