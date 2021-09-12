@@ -1,17 +1,17 @@
 <?php
 /**
- * Adds Foo_Widget widget.
+ * Adds Youtube_Subs widget.
  */
-class Foo_Widget extends WP_Widget {
+class Youtube_Subs_Widget extends WP_Widget {
 
 	/**
 	 * Register widget with WordPress.
 	 */
 	function __construct() {
 		parent::__construct(
-			'foo_widget', // Base ID
-			esc_html__( 'Widget Title', 'text_domain' ), // Name
-			array( 'description' => esc_html__( 'A Foo Widget', 'text_domain' ), ) // Args
+			'youtubesubs_widget', // Base ID
+			esc_html__( 'Youtube Subs Widget', 'yts_domain' ), // Name
+			array( 'description' => esc_html__( 'Widget to display youtube Subs', 'yts_domain' ), ) // Args
 		);
 	}
 
@@ -24,12 +24,15 @@ class Foo_Widget extends WP_Widget {
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
-		echo $args['before_widget'];
+		echo $args['before_widget']; //Whater you want to display before widget (<div>, etc...)
+
 		if ( ! empty( $instance['title'] ) ) {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
-		echo esc_html__( 'Hello, World!', 'text_domain' );
-		echo $args['after_widget'];
+		// Widget Content Output
+    echo "Hello from YTS widget";
+		
+    echo $args['after_widget']; //Whater you want to display after widget (</div>, etc...)
 	}
 
 	/**
@@ -40,12 +43,22 @@ class Foo_Widget extends WP_Widget {
 	 * @param array $instance Previously saved values from database.
 	 */
 	public function form( $instance ) {
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'New title', 'text_domain' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Youtube Subs', 'yts_domain' );
 		?>
-		<p>
-		<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label> 
-		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+		
+    <p>
+		<label
+     for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'yts_domain' ); ?>
+    </label>
+
+		<input 
+    class="widefat" 
+    id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" 
+    name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" 
+    value="<?php echo esc_attr( $title ); ?>"
+    >
 		</p>
+
 		<?php 
 	}
 
