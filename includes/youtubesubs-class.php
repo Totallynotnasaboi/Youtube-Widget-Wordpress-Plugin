@@ -30,7 +30,7 @@ class Youtube_Subs_Widget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'];
 		}
 		// Widget Content Output
-    echo "Hello from YTS widget";
+    echo '<div class="g-ytsubscribe" data-channelid="UC26l7fbM4NE-NhUCPnDKeew" data-layout="full" data-count="default"></div>';
 		
     echo $args['after_widget']; //Whater you want to display after widget (</div>, etc...)
 	}
